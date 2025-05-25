@@ -1,12 +1,8 @@
 var containsDuplicate = function(nums) {
-    let numbersHashMap = new Map();
-
-    for (let i = 0; i < nums.length; i++) {
-        let char = nums[i];
-        if (numbersHashMap.has(char)) {
+    let newNums = nums.sort();
+    for(let i = 1; i < nums.length; i++){
+        if(newNums[i] == newNums[i - 1]){
             return true;
-        } else {
-            numbersHashMap.set(char, 1)
         }
     }
     return false;
